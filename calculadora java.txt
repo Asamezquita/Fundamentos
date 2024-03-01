@@ -1,0 +1,56 @@
+package Pquete;
+import java.util.Scanner;
+import java.lang.Integer;
+public class Clase1 {
+
+	public static void main(String[] args) {
+		// Declarar variables
+		
+		double numero1,numero2,resultado=0;
+		int operacion;
+		Scanner leer = new Scanner(System.in);
+		
+		//leer variables
+		System.out.print("Digite el primer número: ");
+		 numero1 =  leer.nextDouble();
+		 		 
+		 System.out.print("Digite el segundo número: ");
+		 numero2 =  leer.nextDouble();
+		 
+		 System.out.print("\n\tOPERACIÓNES: \n\n\tSi quiere suma digite 1 \n\tSi quiere resta digite 2 \n\tSi quiere multiplicación digite 3 \n\tSi quiere división digite 4");
+		operacion =  leer.nextInt();
+		
+		//Se realizan operaciones
+		
+		if (operacion<=0 || operacion>=5) {
+			System.out.print("¡¡¡¡ERROR!!! OPERACIÓN NO VÁLIDA ");
+		}else {
+			if (operacion == 1) {
+				//resultado = numero1 + numero2;//operación suma
+				
+				System.out.print(" \n\tEl resultado de " + numero1 + " + " + numero2 + " es igual a: " + resultado);
+			}else {
+				if (operacion == 2) {
+					resultado = numero1 - numero2;      //operación suma
+					System.out.print(" \n\tEl resultado de " + numero1 + " - " + numero2 + " es igual a: " + resultado);
+				}else {
+					if (operacion == 3) {
+						resultado = numero1 * numero2;
+						System.out.print(" \n\tEl resultado de " + numero1 + " * " + numero2 + " es igual a: " + resultado);
+					}else {
+						if(operacion == 4) {
+							if(numero2 == 0) {
+								System.out.print("\n\t¡¡¡¡ERROR!!! ");
+							}else {
+								resultado = numero1 / numero2;
+								System.out.print(" \n\tEl resultado de " + numero1 + " / " + numero2 + " es igual a: " + resultado);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+
+}
