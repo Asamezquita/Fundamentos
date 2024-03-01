@@ -1,0 +1,75 @@
+package PruebasDeProyectos;
+
+import java.util.Scanner;
+
+public class TrabajoClase210224 { 
+	
+	public static void main(String[] args) {
+		
+		//Se declaran variables
+		int a = 5, b = 10;
+		int suma = 0, resta = 0, multiplicacion = 0, division = 0, mod = 0;
+		
+		boolean bandera1 = false, bandera2 = false, bandera3 = false, bandera4 = false;
+		
+		// Se realizan operaciones aritméticas básicas (suma, resta, multiplicación y división) entre a y b
+		suma = a+b;
+		resta = a-b;
+		multiplicacion = a*b;
+		division = a/b;
+		mod = a%b;
+		
+		//Se ncrementa el valor de "a" en uno y decrementa el valor de "b" en uno, usando operadores aritméticos incrementales.
+		a++;
+		b--;
+		
+		suma = a+b;
+		resta = a-b;
+		multiplicacion = a*b;
+		division = a/b;
+		mod = a%b;
+		
+		//Se aumenta el valor de "a" en 2 y multiplica el valor de "b" por 3 usando operadores aritméticos combinados.
+		a += 2;
+		b *=3;
+		
+		suma = a+b;
+		resta = a-b;
+		multiplicacion = a*b;
+		division = a/b;
+		mod = a%b;
+		
+		//Se imprime el resultado de las operaciones 
+		System.out.println("\nLa suma de " + a + " + " + b + " es igual a "+ suma);
+		System.out.println("\nLa resta de " + a + " - " + b + " es igual a "+ resta);
+		System.out.println("\nLa multiplicación de " + a + " * " + b + " es igual a "+ multiplicacion);
+		System.out.println("\nLa división de " + a + " / " + b + " es igual a "+ division);
+		System.out.println("\nEl módulo de " + a + " % " + b + " es igual a "+ mod);
+		
+		/*Se comprueba si a es igual a b, si a es diferente de b, si a es mayor que b y si a es menor que b 
+		 usando operadores de relación y se guarda los resultados en variables booleanas*/
+		if ( a == b) {
+			bandera1 = true;
+			System.out.println("\n\n" + a + " == " + b);
+		} else {
+			if (a != b) {
+				bandera2 = true;
+				System.out.println("\n\n" + a + " != " + b);
+			} else {
+				if (a > b) {
+					bandera3 = true;
+					System.out.println("\n\n" + a + " > " + b);
+				} else {
+					if (a < b) {
+						bandera4 = true;
+						System.out.println("\n\n" + a + " < " + b);
+					}
+				}
+			}
+		}
+		//Se imprime el valor de a y b
+		System.out.println("\nEl valor de a es " + a);
+		System.out.println("\nEl valor de b es " + b);
+	}
+
+}
