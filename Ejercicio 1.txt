@@ -1,0 +1,19 @@
+package clase;
+
+public class Ejercicio2 {
+
+	public static void main(String[] args) {
+		int n, m;
+
+		for (n = 0; n < 8; n++) {
+			for (m = 0; m < 8; m++) {
+				if ((n+m) % 2 == 0) {
+					System.out.print("▓");	
+				} else {
+					System.out.print(" ");
+				} 		
+			}
+			System.out.println();
+		}
+	}
+}
