@@ -1,0 +1,26 @@
+package fundamentos;
+import java.util.Scanner;
+public class seriefibonachi {
+	
+	public static int serief (int n, int i) {
+		int res=0, a=0, b=1;
+		Scanner leer = new Scanner(System.in);
+		System.out.println("Ingrese hasta que valor desea la serie fibonacci:");
+		n = leer.nextInt();
+		System.out.println();
+		for (i=1;i<=n;i++) {
+			System.out.println(a + " ");
+			res= a+b;
+			a=b;
+			b=res;
+		}
+		return res;
+	}
+
+	public static void main(String[] args) {
+		
+		int resultado= (serief(0, 0));
+
+	}
+
+}
