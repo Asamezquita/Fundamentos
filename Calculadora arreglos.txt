@@ -1,0 +1,77 @@
+package fundamentos;
+
+import java.util.Scanner;
+
+public class calculadoraconArreglos {
+
+	public static void main(String[] args) {
+
+		double num[] = new double[5];
+		double num2[] = new double[5];
+		int i, menu = 0;
+		Scanner leer = new Scanner(System.in);
+
+		for (i = 0; i < num.length; i++) {
+			System.out.print("Digite los números para el vector 1 en la posicón " + i + ": ");
+
+			num[i] = leer.nextDouble();
+
+		}
+		for (i = 0; i < num2.length; i++) {
+			System.out.print("Digite los números para el vector 2 en la posicón " + i + ": ");
+			num2[i] = leer.nextDouble();
+		}
+		System.out.println("¡MENÚ PRINCIPAL!");
+		System.out.println("Seleccione la operación deseada: ");
+		System.out.println();
+		System.out.println("1. Suma");
+		System.out.println("2. Resta");
+		System.out.println("3. Multiplicación");
+		System.out.println("4. División");
+
+		menu = leer.nextInt();
+		switch (menu) {
+
+		case 1:
+			for (i = 0; i < num.length; i++) {
+				num[i] = num[i] + num2[i];
+			}
+			System.out.println("El resultado de la suma es: ");
+			for (i = 0; i < num.length; i++) {
+				System.out.print(num[i] + "-");
+			}
+			break;
+		case 2:
+
+			for (i = 0; i < num.length; i++) {
+				num[i] = num[i] - num2[i];
+			}
+			System.out.println("El resultado de la resta es: ");
+			for (i = 0; i < num.length; i++) {
+				System.out.print(num[i] + "-");
+			}
+			break;
+
+		case 3:
+
+			for (i = 0; i < num.length; i++) {
+				num[i] = num[i] * num2[i];
+			}
+			System.out.println("El resultado de la multiplicación es: ");
+			for (i = 0; i < num.length; i++) {
+				System.out.print(num[i] + "-");
+			}
+			break;
+		case 4:
+
+			for (i = 0; i < num.length; i++) {
+				num[i] = num[i] / num2[i];
+			}
+			System.out.println("El resultado de la división es: ");
+			for (i = 0; i < num.length; i++) {
+				System.out.print(num[i] + "-");
+			}
+			break;
+		}
+	}
+}
