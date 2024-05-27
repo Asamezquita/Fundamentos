@@ -1,0 +1,29 @@
+package fundamentos;
+import java.util.Scanner;
+public class comisionArreglos {
+
+	public static double obtenerNumero(String mensaje) {
+		Scanner scanner = new Scanner(System.in);
+		
+		double numero = scanner.nextDouble();
+		return numero;
+	}
+
+	public static void calcularComision(double valorVenta, int numComisionistas) {
+		double comision;
+		if (valorVenta > 1000) {
+			comision = valorVenta * 0.05;
+		} else {
+			comision = valorVenta * 0.03;
+		}
+		double comisionPorPersona = comision / numComisionistas;
+		System.out.println("La comisión por persona es: " + comisionPorPersona);
+	}
+	public static void main(String[] args) {
+
+		double valorVenta = obtenerNumero("Ingresa el valor de la venta: ");
+		int numComisionistas = (int) obtenerNumero("Ingresa el número de comisionistas: ");
+
+		calcularComision(valorVenta, numComisionistas);
+	}
+}
