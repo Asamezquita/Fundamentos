@@ -1,0 +1,37 @@
+package fundamentos;
+import java.util.Scanner;
+import java.util.Arrays;
+public class calcularMediana {
+
+	
+	public static double calcularMediana(int[] numeros) {
+        Arrays.sort(numeros);
+        int longitud = numeros.length;
+        if (longitud % 2 == 0) {
+            return (double) (numeros[longitud / 2 - 1] + numeros[longitud / 2]) / 2;
+        } else {
+            return (double) numeros[longitud / 2];
+        }
+    }
+	
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese la cantidad de números: ");
+        int cantidad = scanner.nextInt();
+        
+        int[] conjuntoDeNumeros = new int[cantidad];
+        
+        for (int i = 0; i < cantidad; i++) {
+            System.out.print("Ingrese el número " + (i + 1) + ": ");
+            conjuntoDeNumeros[i] = scanner.nextInt();
+        }
+        
+        double mediana = calcularMediana(conjuntoDeNumeros);
+        System.out.println("La mediana del conjunto de números es: " + mediana);
+        
+    }
+    
+
+	}
