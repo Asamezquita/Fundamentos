@@ -1,0 +1,74 @@
+package fundamentos;
+
+import java.util.Scanner;
+
+public class ejerCalificaciones {
+
+	public static void main(String[] args) {
+		
+		Scanner leer = new Scanner(System.in);
+		
+		int n=0;
+		int ex = 0, bu = 0, re =0, in = 0;
+		double prom =0;
+		
+		
+		System.out.print("Digite la cantidad de estudiantes:");
+		n=leer.nextInt();
+		int estu[]= new int[n];
+		int max = 0;
+		int min = 100;
+		
+		for (int i=0;i< estu.length;i++) {
+			System.out.print("Ingrese la nota del estudiante"+(i+1)+":");
+			estu[i] = leer.nextInt();
+			if (estu[i]<0 || estu[i]>100) {
+				System.out.println("ERROR");
+				System.out.println("Ingrese una nota dentro del rango para el"+(i+1)+"estudiante");
+				i--;
+			}
+		}
+		
+		for(int i=0;i< estu.length;i++) {
+			
+			if (estu[i] > max) {
+				max = estu[i];
+			}
+			if (estu[i] < min) {
+				min = estu[i];
+			}
+			
+		}
+		System.out.println("Calificacion mas alta es: " + max);
+		System.out.println("Calificacion mas baja es: " + min);
+		
+		for(int i=0 ;i< estu.length;i++) {
+			prom += estu[i];
+			
+		}
+		prom = prom/n;
+		System.out.println("El promedio de notas de los estudiantes es: " +  prom);
+		
+		for(int i=0;i< estu.length;i++) {
+			
+			if (estu[i] >= 90) {
+				ex++;	
+			} else {
+				if (estu[i] >= 70 && estu[i] <= 89 ) {
+					bu++;
+				} else {
+					if (estu[i] >= 50 && estu[i] <= 69 ) {
+						re++;
+					}else {
+						in++;
+					}
+				}
+			}
+		}
+		System.out.println("Cantidad de estudiantes con nota Excelente: " + ex);
+		System.out.println("Cantidad de estudiantes con nota Bueno: " + bu);
+		System.out.println("Cantidad de estudiantes con nota Regular: " + re);
+		System.out.println("Cantidad de estudiantes con nota Insuficiente: " + in);
+	}
+	
+}
