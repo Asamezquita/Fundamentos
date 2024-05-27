@@ -1,0 +1,42 @@
+package fundamentos;
+import java.util.Scanner;
+public class pruductoEscalardeVectores {
+
+	public static void main(String[] args) {
+		int T;
+		Scanner leer = new Scanner(System.in);
+		System.out.println("Ingrese de que tamaño deseea el vector:");
+		T= leer.nextInt();
+		int vector1[]= new int[T];
+		for (int i=0;i< vector1.length;i++) {
+			System.out.print("Ingrese los valores para el vector1:");
+			vector1[i] = leer.nextInt();
+		}
+		
+		int vector2[]= new int[T];
+		for (int i=0;i< vector2.length;i++) {
+			System.out.print("Ingrese los valores para el vector2:");
+			vector2[i] = leer.nextInt();
+		}
+		
+		
+		int productoEscalar = calcularProductoEscalar(vector1, vector2);	
+		System.out.println("El producto escalar de los vectores es:"+productoEscalar);
+	}
+	
+	public static int calcularProductoEscalar(int[]vector1, int[]vector2) {
+		
+		if(vector1.length != vector2.length) {
+			System.out.println("Los vectores deben tener la misma longitud.");
+			return 0;
+				
+		}
+		int productoEscalar=0;
+		
+		for(int i=0;i<vector1.length;i++) {
+			productoEscalar += vector1[i]*vector2[i];
+		}
+		return productoEscalar; 
+	}
+
+}
