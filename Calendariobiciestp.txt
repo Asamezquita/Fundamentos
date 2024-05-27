@@ -1,0 +1,80 @@
+package fundamentos;
+import java.util.Scanner;
+public class calendarioBisiesto {
+	public static boolean esBisiesto(int anno) {
+		return (anno %4 ==0 && anno %100!=0) || (anno %400 ==0);
+	}
+	
+	public static int obtenerDias(int mes, int anno) {
+		if (mes == 2) {
+			return esBisiesto(anno)? 29:28;
+		}else {if (mes ==4 || mes == 6 || mes == 9 || mes == 11) {
+			return 30;
+		}else {
+			return 31;
+		}
+		}
+	}
+		
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		    
+	        System.out.print("Ingrese el año: ");
+	        int anno = scanner.nextInt();
+	        
+	       int mes=0;
+	       for (int i=1;i<=12;i++) {
+	    	   mes = mes+1;
+	    	  
+			int dias = obtenerDias(mes, anno);
+	    	   String nombreMes;
+		        switch (mes) {
+		            case 1:
+		                nombreMes = "Enero";
+		                break;
+		            case 2:
+		                nombreMes = "Febrero";
+		                break;
+		            case 3:
+		                nombreMes = "Marzo";
+		                break;
+		            case 4:
+		                nombreMes = "Abril";
+		                break;
+		            case 5:
+		                nombreMes = "Mayo";
+		                break;
+		            case 6:
+		                nombreMes = "Junio";
+		                break;
+		            case 7:
+		                nombreMes = "Julio";
+		                break;
+		            case 8:
+		                nombreMes = "Agosto";
+		                break;
+		            case 9:
+		                nombreMes = "Septiembre";
+		                break;
+		            case 10:
+		                nombreMes = "Octubre";
+		                break;
+		            case 11:
+		                nombreMes = "Noviembre";
+		                break;
+		            default:
+		                nombreMes = "Diciembre";
+		                        
+	       }
+		        System.out.println("El mes de " + nombreMes + " tiene " + dias + " días.");
+	       }
+	        
+	        
+	        if (esBisiesto(anno)) {
+	            System.out.println("El año " + anno + " es bisiesto.");
+	        } else {
+	            System.out.println("El año " + anno + " no es bisiesto.");
+	        }
+	       }
+	}
